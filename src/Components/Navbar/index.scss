@@ -1,0 +1,50 @@
+@import '../../Common/Scss/variables.scss';
+
+.navbarContainer {
+    height: 100px;
+    width: 100%;
+
+    background: $primary-background-color;
+    box-shadow: 0 10px 30px -10px #5ff2d209;
+    padding: 0px 80px;
+    backdrop-filter: blur(20px);
+
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+
+    &__logo {
+        font-size: 6rem;
+        color: $secondary-text-color;
+        text-decoration: none;
+    }
+
+    &__links {
+        display: flex;
+        list-style-type: none;
+
+        & li {
+            margin-left: 50px;
+            position: relative;
+        }
+        & li::before {
+            position: absolute;
+            left: -15px;
+            content: '\2022';
+            color: $secondary-text-color;
+            font-weight: bold;
+            font-size: 2rem;
+            display: inline-block;
+            width: 10px;
+        }
+
+        &__link {
+            color: $primary-text-color;
+            font-size: 2rem;
+            cursor: pointer;
+            text-decoration: none;
+        }
+    }
+}

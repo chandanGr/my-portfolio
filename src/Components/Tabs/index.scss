@@ -1,0 +1,48 @@
+@import '../../Common/Scss/variables.scss';
+
+$background-hover-color: #163460;
+
+.tabs {
+    display: flex;
+
+    &__panels {
+        list-style: none;
+        height: 100%;
+        position: relative;
+
+        &::before {
+            position: absolute;
+            content: '';
+            width: 3px;
+            height: 100%;
+            background: #233554;
+        }
+
+        &__tab {
+            position: relative;
+            min-width: 300px;
+            padding: 10px;
+            font-size: 2rem;
+            color: $primary-text-color;
+            cursor: pointer;
+            margin: 10px 40px 0px 0px;
+            padding-left: 15px;
+
+            &:hover {
+                background-color: $background-hover-color;
+                color: $secondary-text-color;
+            }
+
+            &.active::before {
+                position: absolute;
+                content: '';
+                width: 3px;
+                background: $secondary-text-color;
+                left: 0px;
+                top: 0px;
+                height: 100%;
+                border-radius: 5px;
+            }
+        }
+    }
+}

@@ -1,0 +1,19 @@
+.aboutMe {
+    display: flex;
+    justify-content: center;
+
+    &__details {
+        flex: 1;
+
+        &__info {
+            &:nth-child(1) {
+                margin-top: 0px;
+            }
+        }
+    }
+
+    &__image {
+        width: 200px;
+        height: 200px;
+    }
+}

@@ -1,0 +1,13 @@
+@import './variables.scss';
+.paragraph_text {
+    font-size: 2rem;
+    margin-top: 15px;
+    color: $primary-text-color;
+    opacity: 0.7;
+    line-height: 27px;
+}
+
+.text_highlight {
+    color: $secondary-text-color;
+    font-weight: 900;
+}

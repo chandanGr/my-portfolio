@@ -1,0 +1,15 @@
+{
+    "editor.bracketPairColorization.enabled": true,
+    "editor.formatOnSave": true,
+    "prettier.jsxSingleQuote": true,
+    "prettier.useTabs": false,
+    "prettier.tabWidth": 4,
+    "prettier.printWidth": 160,
+    "prettier.bracketSpacing": true,
+    "prettier.trailingComma": "none",
+    "prettier.endOfLine": "auto",
+    "prettier.singleQuote": true,
+    "stylelint.validate": [
+        "scss"
+    ],
+}

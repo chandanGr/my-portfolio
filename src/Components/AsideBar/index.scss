@@ -1,0 +1,33 @@
+@import '../../Common/Scss/variables.scss';
+.asidebarContainer {
+    width: 30px;
+    height: calc(100vh - 100px);
+
+    position: fixed;
+    right: 55px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+
+    &__name {
+        min-width: 300px;
+
+        transform: rotateZ(90deg);
+        font-size: 2rem;
+        color: $secondary-text-color;
+        letter-spacing: 3px;
+        transform-origin: left;
+        cursor: pointer;
+    }
+
+    &__line {
+        width: 3px;
+        height: 120px;
+
+        border-radius: 4px;
+        background: $primary-text-color;
+
+        display: block;
+        margin-top: 300px;
+    }
+}

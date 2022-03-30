@@ -1,0 +1,27 @@
+@import '../../../../Common/Scss/variables.scss';
+.tabPanel {
+    min-width: 300px;
+    &__name {
+        margin: 0px 60px 0px 0px;
+        font-size: 2rem;
+        color: #c2cceb;
+        cursor: pointer;
+        padding: 10px;
+
+        position: relative;
+
+        &:hover {
+            background-color: #163460;
+            color: $secondary-text-color;
+        }
+
+        &--active::before {
+            position: absolute;
+            content: '';
+            width: 10px;
+            background: $secondary-text-color;
+            left: 0px;
+            top: 0px;
+        }
+    }
+}
