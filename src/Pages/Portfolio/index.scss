@@ -24,3 +24,34 @@
 .imageInfoWrapper__list {
     margin-top: 15px;
 }
+
+.skillsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    list-style: none;
+}
+
+.contactContainer {
+    text-align: center;
+
+    &__email {
+        color: $secondary-text-color;
+        letter-spacing: 4px;
+    }
+
+    & .buttonContainer {
+        margin-top: 10px;
+    }
+}
+
+footer {
+    text-align: center;
+    padding: 2px;
+    & .footer__info {
+        margin: 80px 0px 10px 0px;
+        display: block;
+        font-size: 1.5rem;
+        color: $secondary-text-color;
+    }
+}

@@ -1,5 +1,11 @@
 
 import chart from '../../charts.png';
+import github from '../../github.png';
+import linkedin from '../../linkedin.png';
+import medium from '../../medium.png';
+import resume from '../../resume.png';
+import { INavbar } from '../../Components/Navbar';
+import { ISideBarItem } from '../../Components/SideBar';
 
 export const companyDetails = [
     {
@@ -55,25 +61,106 @@ export const imageInfos = [
     },
 ]
 
-export const navBarItems = [
+export const navBarItems: INavbar[] = [
     {
         name: 'About',
-        forVal: 'ABOUT'
+        href: '#ABOUT',
     },
     {
         name: 'Experience',
-        forVal: 'EXPERIENCE'
+        href: '#EXPERIENCE'
     },
     {
         name: 'Projects',
-        forVal: 'WORK'
+        href: '#PROJECTS'
+    },
+    {
+        name: 'Skills',
+        href: '#SKILLS'
     },
     {
         name: 'Contact',
-        forVal: 'CONTACT'
+        href: '#CONTACT'
     },
     {
         name: 'Resume',
-        forVal: 'RESUME'
+        href: resume,
+        type: 'button',
+        downloadLink: true
+
+    }
+];
+
+export const skills = [
+    {
+        label: 'React JS',
+        max: 5,
+        value: 4,
+    },
+    {
+        label: 'Node JS',
+        max: 5,
+        value: 3.5,
+    },
+    {
+        label: 'Javascript',
+        max: 5,
+        value: 4,
+    },
+    {
+        label: 'Mongo DB',
+        max: 5,
+        value: 3.5,
+    },
+    {
+        label: 'HTML',
+        max: 5,
+        value: 4,
+    },
+    {
+        label: 'CSS/SCSS/React-jss',
+        max: 5,
+        value: 4,
+    },
+    {
+        label: 'Sockets',
+        max: 5,
+        value: 2.5,
+    },
+    {
+        label: 'AWS/GCP',
+        max: 5,
+        value: 2,
+    },
+    {
+        label: 'Docker',
+        max: 5,
+        value: 2.5,
+    },
+    {
+        label: 'Linux',
+        max: 5,
+        value: 2.5,
+    },
+]
+
+export const sidebarItems: ISideBarItem[] = [
+    {
+        name: 'LinkedIn',
+        imageSrc: linkedin,
+        link: 'https://www.linkedin.com/in/chandan-gr-5b18bb136/',
+        target: '_blank'
+    },
+    {
+        name: 'Github',
+        imageSrc: github,
+        link: 'https://github.com/chandangr/',
+        target: '_blank'
+    },
+    {
+        name: 'Medium',
+        imageSrc: medium,
+        target: '_blank',
+        link: 'https://chandan2809gr.medium.com/'
     }
 ];

@@ -24,20 +24,15 @@
     &__links {
         display: flex;
         list-style-type: none;
+        align-items: center;
+
+        &__button {
+            list-style: none;
+        }
 
         & li {
             margin-left: 50px;
             position: relative;
-        }
-        & li::before {
-            position: absolute;
-            left: -15px;
-            content: '\2022';
-            color: $secondary-text-color;
-            font-weight: bold;
-            font-size: 2rem;
-            display: inline-block;
-            width: 10px;
         }
 
         &__link {
@@ -45,6 +40,17 @@
             font-size: 2rem;
             cursor: pointer;
             text-decoration: none;
+
+            &::before {
+                position: absolute;
+                left: -15px;
+                content: '\2022';
+                color: $secondary-text-color;
+                font-weight: bold;
+                font-size: 2rem;
+                display: inline-block;
+                width: 10px;
+            }
         }
     }
 }

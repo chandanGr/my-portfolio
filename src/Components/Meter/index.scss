@@ -1,0 +1,42 @@
+@import '../../Common/Scss/variables.scss';
+
+.meter {
+    margin: 15px 0px;
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    & progress {
+        appearance: none;
+
+        width: 150px;
+        height: 10px;
+        position: relative;
+
+        &::before {
+            position: absolute;
+            content: attr(data-text);
+            color: $primary-text-color;
+            font-size: 2rem;
+            top: -20px;
+            right: 0px;
+        }
+    }
+
+    & progress::-webkit-progress-bar {
+        background-color: $primary-text-color;
+        border-radius: 2px;
+        border: 1px solid $primary-text-color;
+    }
+
+    & progress::-webkit-progress-value {
+        background-color: $secondary-text-color;
+        border-radius: 2px;
+    }
+
+    & label {
+        font-size: 2rem;
+        color: $primary-text-color;
+    }
+}
