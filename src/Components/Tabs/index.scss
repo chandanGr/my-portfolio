@@ -1,7 +1,5 @@
 @import '../../Common/Scss/variables.scss';
 
-$background-hover-color: #163460;
-
 .tabs {
     display: flex;
 
@@ -41,6 +39,34 @@ $background-hover-color: #163460;
                 top: 0px;
                 height: 100%;
                 border-radius: 5px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .tabs {
+        display: flex;
+        flex-direction: column;
+
+        &__panels {
+            display: flex;
+            margin-bottom: 20px;
+            &::before {
+                position: absolute;
+                content: '';
+                width: 100%;
+                height: 2px;
+                background: #233554;
+                bottom: 0px;
+            }
+            &__tab.active::before {
+                position: absolute;
+                content: '';
+                width: 100%;
+                height: 2px;
+                background: $secondary-text-color;
+                top: 95%;
             }
         }
     }

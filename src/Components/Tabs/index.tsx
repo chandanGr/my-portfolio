@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import TabPanel, { ITabPanel } from './Components/TabPanel';
+import { ITabPanel } from './Components/TabPanel';
 
 import './index.scss';
 
@@ -10,7 +10,6 @@ interface ITabs {
 
 function Tabs(props: ITabs) {
     const [selectedTabPanel, setSelectedTabPanel] = useState<number>(0);
-    console.log('index', selectedTabPanel);
     const tabPanelNames = props.children.map((tab) => tab.props.tabPanelName);
     return (
         <div className='tabs'>
