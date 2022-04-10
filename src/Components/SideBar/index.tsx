@@ -1,17 +1,8 @@
 import React from 'react';
 
+import { ISideBarItem, ISideBarItemTheme } from './Interface';
+
 import './index.scss';
-
-export interface ISideBarItem {
-    name: string;
-    link: string;
-    imageSrc: string;
-    target?: React.HTMLAttributeAnchorTarget;
-}
-
-interface ISideBarItemTheme {
-    nameAnimation?: boolean;
-}
 interface ISideBar {
     sideBarItems: ISideBarItem[];
     theme?: ISideBarItemTheme;

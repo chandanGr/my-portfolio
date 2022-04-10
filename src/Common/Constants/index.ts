@@ -4,8 +4,8 @@ import github from '../../github.png';
 import linkedin from '../../linkedin.png';
 import medium from '../../medium.png';
 import resume from '../../resume.png';
-import { INavbar } from '../../Components/Navbar';
-import { ISideBarItem } from '../../Components/SideBar';
+import { INavbar } from '../../Components/Navbar/Interface';
+import { ISideBarItem } from '../../Components/SideBar/Interface';
 
 export const companyDetails = [
     {
@@ -65,22 +65,37 @@ export const navBarItems: INavbar[] = [
     {
         name: 'About',
         href: '#ABOUT',
+        theme: {
+            linkHoverAnimation: true
+        }
     },
     {
         name: 'Experience',
-        href: '#EXPERIENCE'
+        href: '#EXPERIENCE',
+        theme: {
+            linkHoverAnimation: true
+        }
     },
     {
         name: 'Projects',
-        href: '#PROJECTS'
+        href: '#PROJECTS',
+        theme: {
+            linkHoverAnimation: true
+        }
     },
     {
         name: 'Skills',
-        href: '#SKILLS'
+        href: '#SKILLS',
+        theme: {
+            linkHoverAnimation: true
+        }
     },
     {
         name: 'Contact',
-        href: '#CONTACT'
+        href: '#CONTACT',
+        theme: {
+            linkHoverAnimation: true
+        }
     },
     {
         name: 'Resume',
@@ -118,7 +133,7 @@ export const skills = [
         value: 4,
     },
     {
-        label: 'CSS/SCSS/React-jss',
+        label: 'CSS/SCSS',
         max: 5,
         value: 4,
     },

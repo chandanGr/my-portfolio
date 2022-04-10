@@ -1,15 +1,9 @@
 import React, { useState } from 'react';
 import Button from '../Button';
 
-import './index.scss';
+import { INavbar } from './Interface';
 
-export interface INavbar {
-    name: string;
-    type?: 'link' | 'button' | undefined;
-    href?: string;
-    target?: React.HTMLAttributeAnchorTarget;
-    downloadLink?: boolean;
-}
+import './index.scss';
 interface INavbarProps {
     navBarItems: INavbar[];
     onButtonClick?: (name: string) => void;
@@ -37,7 +31,7 @@ function Navbar(props: INavbarProps) {
                 {props.navBarItems.map((navBarItem) => {
                     if (navBarItem.type === 'button') {
                         return (
-                            <li className='navbarContainer__links__button'>
+                            <li className={`navbarContainer__links__button ${navBarItem.theme?.linkHoverAnimation ? 'link-hover-animation' : ''}`}>
                                 <a href={navBarItem.href} target='_blank' download={navBarItem.downloadLink}>
                                     <Button onClick={() => props.onButtonClick && props.onButtonClick(navBarItem.name)} theme={{ hoverButtonAnimation: true }}>
                                         {navBarItem.name}
@@ -47,7 +41,7 @@ function Navbar(props: INavbarProps) {
                         );
                     }
                     return (
-                        <li>
+                        <li className={`${navBarItem.theme?.linkHoverAnimation ? 'link-hover-animation' : ''}`}>
                             <a className='navbarContainer__links__link' href={navBarItem.href} download={navBarItem.downloadLink}>
                                 {navBarItem.name}
                             </a>

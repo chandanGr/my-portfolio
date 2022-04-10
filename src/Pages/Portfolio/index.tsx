@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import AboutMe from '../../Components/AboutMe';
 import AsideBar from '../../Components/AsideBar';
@@ -15,8 +15,21 @@ import Button from '../../Components/Button';
 import { companyDetails, imageInfos, navBarItems, sidebarItems, skills } from '../../Common/Constants';
 
 import './index.scss';
+import Logo from '../../Components/Logo';
 
 function Portfolio() {
+    const [initialLoad, setInitialLoad] = useState(true);
+
+    useEffect(() => {
+        setTimeout(() => {
+            setInitialLoad(false);
+        }, 3000);
+    }, []);
+
+    if (initialLoad) {
+        return <Logo letter='C' numberOfBoxes={6} />;
+    }
+
     return (
         <div className='portfolio'>
             <Navbar navBarItems={navBarItems} />

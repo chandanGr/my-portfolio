@@ -1,0 +1,17 @@
+@import '../../Common/Scss/variables.scss';
+
+.logoContainer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.logoContainer__letter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 6rem;
+    color: $secondary-text-color;
+}

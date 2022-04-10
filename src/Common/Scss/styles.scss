@@ -11,3 +11,21 @@
     color: $secondary-text-color;
     font-weight: 900;
 }
+
+.link-hover-animation {
+    position: relative;
+    &:after {
+        position: absolute;
+        content: '';
+        width: 0%;
+        height: 2px;
+        bottom: -4px;
+        left: 0px;
+        background-color: $secondary-text-color;
+    }
+
+    &:hover::after {
+        width: 100%;
+        transition: all 0.1s ease-in-out;
+    }
+}
