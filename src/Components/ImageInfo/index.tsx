@@ -1,7 +1,5 @@
 import React from 'react';
 
-import chart from '../../charts.png';
-
 import './index.scss';
 
 interface IImageInfo {
@@ -14,7 +12,7 @@ function ImageInfo(props: IImageInfo) {
     return (
         <div className='imageInfo'>
             <div className='imageInfo__container'>
-                <img src={chart} />
+                <img src={props.imageUrl} />
             </div>
             <div className='imageInfo__wrapper'>
                 <div className='imageInfo__wrapper__title'>{props.title}</div>

@@ -20,6 +20,30 @@
     }
 }
 
+.serviceContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style-type: none;
+    &__item {
+        margin: 10px;
+        width: 40%;
+        min-width: 300px;
+    }
+}
+
+.applicationDetails {
+    font-size: 3rem;
+    margin-bottom: 50px;
+    color: $primary-text-color;
+
+    & span {
+        color: $secondary-text-color;
+        font-size: 4rem;
+        font-weight: 700;
+    }
+}
+
 @media all and (max-width: 900px) {
     .portfolio {
         width: 100%;
@@ -81,5 +105,14 @@ footer {
         display: block;
         font-size: 1.5rem;
         color: $secondary-text-color;
+    }
+}
+
+@media all and (max-width: 1000px) {
+    .imageInfo {
+        flex-direction: column-reverse;
+    }
+    .imageInfo__details {
+        display: none;
     }
 }

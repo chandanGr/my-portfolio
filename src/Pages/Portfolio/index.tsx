@@ -11,11 +11,12 @@ import TabPanel from '../../Components/Tabs/Components/TabPanel';
 import ImageInfo from '../../Components/ImageInfo';
 import Meter from '../../Components/Meter';
 import Button from '../../Components/Button';
+import Logo from '../../Components/Logo';
+import InfoCard from '../../Components/InfoCard';
 
-import { companyDetails, imageInfos, navBarItems, sidebarItems, skills } from '../../Common/Constants';
+import { companyDetails, imageInfos, infoCardData, navBarItems, sidebarItems, skills } from '../../Common/Constants';
 
 import './index.scss';
-import Logo from '../../Components/Logo';
 
 function Portfolio() {
     const [initialLoad, setInitialLoad] = useState(true);
@@ -23,7 +24,7 @@ function Portfolio() {
     useEffect(() => {
         setTimeout(() => {
             setInitialLoad(false);
-        }, 3000);
+        }, 2500);
     }, []);
 
     if (initialLoad) {
@@ -41,7 +42,7 @@ function Portfolio() {
                     }}
                 />
                 <AsideBar />
-                <div className='portfolio__wrapper__heroSection' id=''>
+                <div className='portfolio__wrapper__heroSection'>
                     <h1 className='portfolio__wrapper__heroSection__name'>Chandan GR.</h1>
                     <h1 className='portfolio__wrapper__heroSection__tagname'>I build things for the web.</h1>
                     <p className='portfolio__wrapper__heroSection__details paragraph_text'>
@@ -56,20 +57,25 @@ function Portfolio() {
                     <AboutMe />
                 </InfoSection>
                 <InfoSection headerName='Work Experience (3.5 Years)' id='EXPERIENCE'>
-                    <Tabs>
-                        {companyDetails.map((companyDetail) => {
-                            return (
-                                <TabPanel tabPanelName={companyDetail.companyName}>
-                                    <CompanyDetail
-                                        companyName={companyDetail.companyName}
-                                        designation={companyDetail.designation}
-                                        companyWorkingDate={companyDetail.companyWorkingDate}
-                                        experienceDetails={companyDetail.experienceDetails}
-                                    />
-                                </TabPanel>
-                            );
-                        })}
-                    </Tabs>
+                    <>
+                        <p className='applicationDetails'>
+                            Total Number of applications built from scratch: <span>7</span>
+                        </p>
+                        <Tabs>
+                            {companyDetails.map((companyDetail) => {
+                                return (
+                                    <TabPanel tabPanelName={companyDetail.companyName}>
+                                        <CompanyDetail
+                                            companyName={companyDetail.companyName}
+                                            designation={companyDetail.designation}
+                                            companyWorkingDate={companyDetail.companyWorkingDate}
+                                            experienceDetails={companyDetail.experienceDetails}
+                                        />
+                                    </TabPanel>
+                                );
+                            })}
+                        </Tabs>
+                    </>
                 </InfoSection>
                 <InfoSection headerName='Some Things I Have Built' id='PROJECTS'>
                     <ul className='imageInfoWrapper'>
@@ -88,15 +94,26 @@ function Portfolio() {
                     </ul>
                 </InfoSection>
                 <InfoSection headerName='What Skills I Know?' id='SKILLS'>
-                    <ul className='skillsContainer'>
-                        {skills.map((skill) => {
-                            return (
-                                <li className='skillsContainer__item'>
-                                    <Meter max={skill.max} value={skill.value} label={skill.label} />
-                                </li>
-                            );
-                        })}
-                    </ul>
+                    <>
+                        <ul className='skillsContainer'>
+                            {skills.map((skill) => {
+                                return (
+                                    <li className='skillsContainer__item'>
+                                        <Meter max={skill.max} value={skill.value} label={skill.label} />
+                                    </li>
+                                );
+                            })}
+                        </ul>
+                        <ul className='serviceContainer'>
+                            {infoCardData.map((infoCard) => {
+                                return (
+                                    <li className='serviceContainer__item'>
+                                        <InfoCard {...infoCard} />
+                                    </li>
+                                );
+                            })}
+                        </ul>
+                    </>
                 </InfoSection>
                 <InfoSection headerName='Get In Touch?' id='CONTACT' theme={{ headerAlign: 'center' }}>
                     <div className='contactContainer'>

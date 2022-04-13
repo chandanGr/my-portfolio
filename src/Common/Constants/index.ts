@@ -1,11 +1,15 @@
 
 import chart from '../../charts.png';
+import categoryPage from '../../category-page.png';
+import website from '../../website.png';
+import zestDashboard from '../../zest-dashboard.png';
 import github from '../../github.png';
 import linkedin from '../../linkedin.png';
 import medium from '../../medium.png';
 import resume from '../../resume.png';
 import { INavbar } from '../../Components/Navbar/Interface';
 import { ISideBarItem } from '../../Components/SideBar/Interface';
+import { IInfoCard } from '../../Components/InfoCard';
 
 export const companyDetails = [
     {
@@ -48,17 +52,23 @@ export const imageInfos = [
         boxInfo: 'Implemented the real-time charts using d3.js, React.js'
     },
     {
-        imageUrl: chart,
-        title: 'Real-time charts',
-        subTitle: 'Using sockets and D3.js',
-        boxInfo: 'Implemented the real-time charts using d3.js, React.js'
+        imageUrl: categoryPage,
+        title: 'Product Details Page',
+        subTitle: 'Using React js, scss',
+        boxInfo: 'Implemented Product Details Page using React.js'
     },
     {
-        imageUrl: chart,
-        title: 'Real-time charts',
-        subTitle: 'Using sockets and D3.js',
-        boxInfo: 'Implemented the real-time charts using d3.js, React.js'
+        imageUrl: website,
+        title: 'Main Wesbite',
+        subTitle: 'Using React js, scss, Node js, Express js',
+        boxInfo: 'Implemented the Website using MERN stack'
     },
+    {
+        imageUrl: zestDashboard,
+        title: 'Customer Real-time Dashboard',
+        subTitle: 'React.js, Node.js, Express.js, MongoDB',
+        boxInfo: 'Implemented the Real-time Dashboards using MERN stack'
+    }
 ]
 
 export const navBarItems: INavbar[] = [
@@ -179,3 +189,22 @@ export const sidebarItems: ISideBarItem[] = [
         link: 'https://chandan2809gr.medium.com/'
     }
 ];
+
+export const infoCardData: IInfoCard[] = [
+    {
+        headerName: 'Front-End Developer',
+        chips: ['React JS', 'Typescript', 'HTML', 'CSS/SCSS', 'Sockets', 'Material UI/Antd/Bootstrap', 'D3.js/Charts.js', 'Real-Time applications'],
+    },
+    {
+        headerName: 'Backend-End Developer',
+        chips: ['Node JS', 'Express', 'Sockets', 'MongoDB', 'RabbitMQ', 'Python Scripts', 'Change Streams', 'Telemetry/sumologic'],
+    },
+    {
+        headerName: 'Mobile-End Developer',
+        chips: ['React-Native', 'Typescript' , 'HTML'],
+    },
+    {
+        headerName: 'Devops',
+        chips: ['AWS/GCP', 'Docker', 'Linux', 'Jenkins', 'Git'],
+    },
+]

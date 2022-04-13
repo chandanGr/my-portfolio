@@ -24,7 +24,7 @@
         color: $secondary-text-color;
         text-decoration: none;
 
-        width: 70px;
+        min-width: 70px;
         height: 70px;
         border-radius: 50%;
         border: 2px double;
@@ -113,7 +113,7 @@
         padding: 10px 20px;
 
         &:hover {
-            background-color: $background-hover-color;
+            background-color: $secondary-background-color;
             color: $secondary-text-color;
         }
     }
