@@ -16,6 +16,8 @@ import InfoCard from '../../Components/InfoCard';
 
 import { companyDetails, imageInfos, infoCardData, navBarItems, sidebarItems, skills } from '../../Common/Constants';
 
+import resume from '../../resume.png';
+
 import './index.scss';
 
 function Portfolio() {
@@ -47,11 +49,14 @@ function Portfolio() {
                     <h1 className='portfolio__wrapper__heroSection__tagname'>I build things for the web.</h1>
                     <p className='portfolio__wrapper__heroSection__details paragraph_text'>
                         Highly skilled software development professional bringing more than{' '}
-                        <span className='text_highlight'>3.5 years of experience in on React js developer (2.5 years on MERN)</span>, Also expertise at software
+                        <span className='text_highlight'>3.5 years of experience on React js developer (2.5 years on MERN)</span>, Also expertise at software
                         design, development, monitoring of web applications. Also experienced at technical leadership, handling a small team. Experienced in
                         full project life cycle from design to product release. Able to effectively self-manage during independent projects, as well as
                         collaborate in a team setting.
                     </p>
+                    <a className='resume-download' href={resume} target='_blank' download={true}>
+                        <Button theme={{ hoverButtonAnimation: true }}>Download Resume</Button>
+                    </a>
                 </div>
                 <InfoSection headerName='About Me' id='ABOUT'>
                     <AboutMe />
@@ -129,7 +134,7 @@ function Portfolio() {
                 </InfoSection>
                 <footer>
                     <a href='https://github.com/chandangr/my-portfolio' target={'_blank'} className='footer__info'>
-                        Designed & Built By Chandan GR
+                        Built By Chandan GR
                     </a>
                 </footer>
             </div>

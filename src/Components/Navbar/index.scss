@@ -73,11 +73,13 @@
             display: block;
             background: transparent;
             cursor: pointer;
+            outline: none;
+            border: none;
 
             & i {
                 background: $primary-background-color;
                 color: $secondary-text-color;
-                font-size: 3rem;
+                font-size: 5rem;
             }
         }
         &__links {
@@ -101,13 +103,25 @@
     justify-content: center;
     align-items: center;
     padding: 50px;
+    z-index: 2;
+    height: 100vh;
+
+    &__button {
+        & .buttonContainer {
+            font-size: 6rem;
+        }
+    }
+
+    &__links {
+        font-size: 6rem;
+    }
 
     & li {
-        margin-top: 30px;
+        margin-top: 50px;
     }
 
     &__link {
-        font-size: 2rem;
+        font-size: 6rem;
         color: $primary-text-color;
         text-decoration: none;
         padding: 10px 20px;
@@ -120,10 +134,10 @@
 
     &__close {
         position: absolute;
-        font-size: 3rem;
+        font-size: 8rem;
         color: $primary-text-color;
         top: 5%;
-        left: 5%;
+        left: 10%;
         cursor: pointer;
     }
 }

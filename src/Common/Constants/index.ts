@@ -111,7 +111,10 @@ export const navBarItems: INavbar[] = [
         name: 'Resume',
         href: resume,
         type: 'button',
-        downloadLink: true
+        attributes: {
+            target: '_blank',
+            download: true
+        }
 
     }
 ];
@@ -200,7 +203,7 @@ export const infoCardData: IInfoCard[] = [
         chips: ['Node JS', 'Express', 'Sockets', 'MongoDB', 'RabbitMQ', 'Python Scripts', 'Change Streams', 'Telemetry/sumologic'],
     },
     {
-        headerName: 'Mobile-End Developer',
+        headerName: 'Mobile Developer',
         chips: ['React-Native', 'Typescript' , 'HTML'],
     },
     {

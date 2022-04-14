@@ -15,40 +15,47 @@ Navbar.defaultProps = {
 function Navbar(props: INavbarProps) {
     const [mobileModelOpen, setMobileModelOpen] = useState(false);
     return (
-        <div className='navbarContainer'>
-            <a className='navbarContainer__logo' href='#'>
-                C
-            </a>
-            <button
-                className='navbarContainer__mobileMenu'
-                onClick={() => {
-                    setMobileModelOpen(true);
-                }}
-            >
-                <i className='fa fa-bars'></i>
-            </button>
-            <ul className='navbarContainer__links'>
-                {props.navBarItems.map((navBarItem) => {
-                    if (navBarItem.type === 'button') {
-                        return (
-                            <li className={`navbarContainer__links__button ${navBarItem.theme?.linkHoverAnimation ? 'link-hover-animation' : ''}`}>
-                                <a href={navBarItem.href} target='_blank' download={navBarItem.downloadLink}>
-                                    <Button onClick={() => props.onButtonClick && props.onButtonClick(navBarItem.name)} theme={{ hoverButtonAnimation: true }}>
+        <>
+            {!mobileModelOpen && (
+                <div className='navbarContainer'>
+                    <a className='navbarContainer__logo' href='#'>
+                        C
+                    </a>
+                    <ul className='navbarContainer__links'>
+                        {props.navBarItems.map((navBarItem) => {
+                            if (navBarItem.type === 'button') {
+                                return (
+                                    <li className={`navbarContainer__links__button ${navBarItem.theme?.linkHoverAnimation ? 'link-hover-animation' : ''}`}>
+                                        <a href={navBarItem.href} {...navBarItem.attributes}>
+                                            <Button
+                                                onClick={() => props.onButtonClick && props.onButtonClick(navBarItem.name)}
+                                                theme={{ hoverButtonAnimation: true }}
+                                            >
+                                                {navBarItem.name}
+                                            </Button>
+                                        </a>
+                                    </li>
+                                );
+                            }
+                            return (
+                                <li className={`${navBarItem.theme?.linkHoverAnimation ? 'link-hover-animation' : ''}`}>
+                                    <a className='navbarContainer__links__link' href={navBarItem.href} {...navBarItem.attributes}>
                                         {navBarItem.name}
-                                    </Button>
-                                </a>
-                            </li>
-                        );
-                    }
-                    return (
-                        <li className={`${navBarItem.theme?.linkHoverAnimation ? 'link-hover-animation' : ''}`}>
-                            <a className='navbarContainer__links__link' href={navBarItem.href} download={navBarItem.downloadLink}>
-                                {navBarItem.name}
-                            </a>
-                        </li>
-                    );
-                })}
-            </ul>
+                                    </a>
+                                </li>
+                            );
+                        })}
+                    </ul>
+                    <button
+                        className='navbarContainer__mobileMenu'
+                        onClick={() => {
+                            setMobileModelOpen(true);
+                        }}
+                    >
+                        <i className='fa fa-bars'></i>
+                    </button>
+                </div>
+            )}
             {mobileModelOpen && (
                 <ul className='mobile__navbarContainer__links'>
                     <div
@@ -57,7 +64,7 @@ function Navbar(props: INavbarProps) {
                             setMobileModelOpen(false);
                         }}
                     >
-                        X
+                        <i className='fa fa-times-circle' aria-hidden='true'></i>
                     </div>
                     {props.navBarItems.map((navBarItem) => {
                         if (navBarItem.type === 'button') {
@@ -68,7 +75,7 @@ function Navbar(props: INavbarProps) {
                                         setMobileModelOpen(false);
                                     }}
                                 >
-                                    <a href={navBarItem.href} target='_blank' download={navBarItem.downloadLink}>
+                                    <a href={navBarItem.href} {...navBarItem.attributes}>
                                         <Button
                                             onClick={() => props.onButtonClick && props.onButtonClick(navBarItem.name)}
                                             theme={{ hoverButtonAnimation: true }}
@@ -85,7 +92,7 @@ function Navbar(props: INavbarProps) {
                                     setMobileModelOpen(false);
                                 }}
                             >
-                                <a className='mobile__navbarContainer__links__link' href={navBarItem.href} download={navBarItem.downloadLink}>
+                                <a className='mobile__navbarContainer__links__link' href={navBarItem.href} {...navBarItem.attributes}>
                                     {navBarItem.name}
                                 </a>
                             </li>
@@ -93,7 +100,7 @@ function Navbar(props: INavbarProps) {
                     })}
                 </ul>
             )}
-        </div>
+        </>
     );
 }
 

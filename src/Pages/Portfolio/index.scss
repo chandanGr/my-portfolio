@@ -6,6 +6,12 @@
         &__heroSection {
             margin: 50px 0px;
 
+            & .resume-download {
+                margin-top: 30px;
+                display: inline-block;
+                font-size: 3rem;
+            }
+
             &__name {
                 font-size: 11rem;
                 color: $primary-text-color;

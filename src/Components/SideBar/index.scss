@@ -11,7 +11,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: end;
+    justify-content: flex-end;
     bottom: 0px;
 
     &__line {
@@ -31,8 +31,8 @@
         margin-bottom: 15px;
 
         &__link {
-            width: 20px;
-            height: 20px;
+            width: 30px;
+            height: 30px;
             & img {
                 width: 100%;
                 height: 100%;
