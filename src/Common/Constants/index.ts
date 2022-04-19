@@ -1,4 +1,3 @@
-
 import chart from '../../charts.png';
 import categoryPage from '../../category-page.png';
 import website from '../../website.png';
@@ -6,7 +5,8 @@ import zestDashboard from '../../zest-dashboard.png';
 import github from '../../github.png';
 import linkedin from '../../linkedin.png';
 import medium from '../../medium.png';
-import resume from '../../resume.png';
+// @ts-expect-error
+import resume from '../../resume.pdf';
 import { INavbar } from '../../Components/Navbar/Interface';
 import { ISideBarItem } from '../../Components/SideBar/Interface';
 import { IInfoCard } from '../../Components/InfoCard';
@@ -14,7 +14,7 @@ import { IInfoCard } from '../../Components/InfoCard';
 export const companyDetails = [
     {
         companyName: 'GoCool Inc (Microsoft)',
-        companyWorkingDate: ' May 2021 - Present (Client - Microsoft)',
+        companyWorkingDate: '2 years | presently working',
         designation: 'React js developer',
         experienceDetails: [
             'Implemented and worked on many features on one of the Microsoft projects.',
@@ -25,7 +25,7 @@ export const companyDetails = [
     {
         companyName: 'SwitchOn',
         designation: 'Full stack developer - MERN',
-        companyWorkingDate: ' May 2020 - May 2021',
+        companyWorkingDate: '1 year',
         experienceDetails: [
             'Implemented Real time Dashboards and pages using React and Node js (MERN). Worked on PWA, Chart.js, d3.js, Material UI and created HTML Templates.',
             'Have knowledge on Docker, AWS, Jenkins, WireFrames (figma), worked on real time applications using sockets.',
@@ -35,7 +35,7 @@ export const companyDetails = [
     {
         companyName: 'EqTribe (ZestMoney)',
         designation: 'Full stack developer - MERN',
-        companyWorkingDate: 'Sep 2018 - May 2020 (Client - ZestMoney)',
+        companyWorkingDate: '2 years',
         experienceDetails: [
             'Designed, Implemented real-time dashboards, charts (d3 js), and form pages using reactjs.',
             'Implemented authentication using JWT with Nodejs and Express. Designed and implemented payment pages for the customers.',
@@ -69,7 +69,7 @@ export const imageInfos = [
         subTitle: 'React.js, Node.js, Express.js, MongoDB',
         boxInfo: 'Implemented the Real-time Dashboards using MERN stack'
     }
-]
+];
 
 export const navBarItems: INavbar[] = [
     {
@@ -115,7 +115,6 @@ export const navBarItems: INavbar[] = [
             target: '_blank',
             download: true
         }
-
     }
 ];
 
@@ -123,54 +122,54 @@ export const skills = [
     {
         label: 'React JS',
         max: 5,
-        value: 4,
+        value: 4
     },
     {
         label: 'Node JS',
         max: 5,
-        value: 3.5,
+        value: 3.5
     },
     {
         label: 'Javascript',
         max: 5,
-        value: 4,
+        value: 4
     },
     {
         label: 'Mongo DB',
         max: 5,
-        value: 3.5,
+        value: 3.5
     },
     {
         label: 'HTML',
         max: 5,
-        value: 4,
+        value: 4
     },
     {
         label: 'CSS/SCSS',
         max: 5,
-        value: 4,
+        value: 4
     },
     {
         label: 'Sockets',
         max: 5,
-        value: 2.5,
+        value: 2.5
     },
     {
         label: 'AWS/GCP',
         max: 5,
-        value: 2,
+        value: 2
     },
     {
         label: 'Docker',
         max: 5,
-        value: 2.5,
+        value: 2.5
     },
     {
         label: 'Linux',
         max: 5,
-        value: 2.5,
-    },
-]
+        value: 2.5
+    }
+];
 
 export const sidebarItems: ISideBarItem[] = [
     {
@@ -196,18 +195,18 @@ export const sidebarItems: ISideBarItem[] = [
 export const infoCardData: IInfoCard[] = [
     {
         headerName: 'Front-End Developer',
-        chips: ['React JS', 'Typescript', 'HTML', 'CSS/SCSS', 'Sockets', 'Material UI/Antd/Bootstrap', 'D3.js/Charts.js', 'Real-Time applications'],
+        chips: ['React JS', 'Typescript', 'HTML', 'CSS/SCSS', 'Sockets', 'Material UI/Antd/Bootstrap', 'D3.js/Charts.js', 'Real-Time applications']
     },
     {
         headerName: 'Backend-End Developer',
-        chips: ['Node JS', 'Express', 'Sockets', 'MongoDB', 'RabbitMQ', 'Python Scripts', 'Change Streams', 'Telemetry/sumologic'],
+        chips: ['Node JS', 'Express', 'Sockets', 'MongoDB', 'RabbitMQ', 'Python Scripts', 'Change Streams', 'Telemetry/sumologic']
     },
     {
         headerName: 'Mobile Developer',
-        chips: ['React-Native', 'Typescript' , 'HTML'],
+        chips: ['React-Native', 'Typescript', 'HTML']
     },
     {
         headerName: 'Devops',
-        chips: ['AWS/GCP', 'Docker', 'Linux', 'Jenkins', 'Git'],
-    },
-]
+        chips: ['AWS/GCP', 'Docker', 'Linux', 'Jenkins', 'Git']
+    }
+];

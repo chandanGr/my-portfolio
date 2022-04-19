@@ -16,7 +16,8 @@ import InfoCard from '../../Components/InfoCard';
 
 import { companyDetails, imageInfos, infoCardData, navBarItems, sidebarItems, skills } from '../../Common/Constants';
 
-import resume from '../../resume.png';
+// @ts-expect-error
+import resume from '../../resume.pdf';
 
 import './index.scss';
 
@@ -49,7 +50,7 @@ function Portfolio() {
                     <h1 className='portfolio__wrapper__heroSection__tagname'>I build things for the web.</h1>
                     <p className='portfolio__wrapper__heroSection__details paragraph_text'>
                         Highly skilled software development professional bringing more than{' '}
-                        <span className='text_highlight'>3.5 years of experience on React js developer (2.5 years on MERN)</span>, Also expertise at software
+                        <span className='text_highlight'>5 years of experience on React js developer (3.5 years on MERN)</span>, Also expertise at software
                         design, development, monitoring of web applications. Also experienced at technical leadership, handling a small team. Experienced in
                         full project life cycle from design to product release. Able to effectively self-manage during independent projects, as well as
                         collaborate in a team setting.
@@ -61,7 +62,7 @@ function Portfolio() {
                 <InfoSection headerName='About Me' id='ABOUT'>
                     <AboutMe />
                 </InfoSection>
-                <InfoSection headerName='Work Experience (3.5 Years)' id='EXPERIENCE'>
+                <InfoSection headerName='Work Experience (5 Years)' id='EXPERIENCE'>
                     <>
                         <p className='applicationDetails'>
                             Total Number of applications built from scratch: <span>7</span>
@@ -126,6 +127,7 @@ function Portfolio() {
                         <p className='paragraph_text'>always open. Whether you have a question or just want to say hi, I’ll try my</p>
                         <p className='paragraph_text'>best to get back to you!</p>
                         <p className='contactContainer__email paragraph_text'>chandan2809gr@gmail.com</p>
+                        <p className='contactContainer__email paragraph_text'>Contact me? (+91)9945622234</p>
 
                         <a href='mailto:chandan2809gr@gmail.com'>
                             <Button theme={{ hoverButtonAnimation: true }}>Say Hello!</Button>
