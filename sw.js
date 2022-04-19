@@ -1,7 +1,6 @@
 var self = this;
-
-const staticCacheName = 'site-static-v1';
-const dynamicCacheName = 'site-dynamic-v1';
+const staticCacheName = 'site-static-v1.1';
+const dynamicCacheName = 'site-dynamic-v1.1';
 const assets = [
     '/',
     '/my-portfolio/static/js/bundle.js',
