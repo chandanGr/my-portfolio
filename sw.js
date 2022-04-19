@@ -1,9 +1,7 @@
 var self = this;
-const staticCacheName = 'site-static-v1.1';
-const dynamicCacheName = 'site-dynamic-v1.1';
+const staticCacheName = 'site-static-v1.2';
+const dynamicCacheName = 'site-dynamic-v1.2';
 const assets = [
-    '/',
-    '/my-portfolio/static/js/bundle.js',
     'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css',
     'https://fonts.googleapis.com/css?family=Concert%20One',
     '/my-portfolio/static/media/linkedin.f249b38224ca41a0b909.png',
@@ -17,10 +15,8 @@ const assets = [
 
 // install event
 self.addEventListener('install', (evt) => {
-    console.log('service worker installed');
     evt.waitUntil(
         caches.open(staticCacheName).then((cache) => {
-            console.log('caching shell assets');
             cache.addAll(assets);
         })
     );
@@ -28,7 +24,6 @@ self.addEventListener('install', (evt) => {
 
 // activate event
 self.addEventListener('activate', (evt) => {
-    console.log('service worker activated');
     evt.waitUntil(
         caches.keys().then((keys) => {
             console.log(keys);
@@ -39,7 +34,6 @@ self.addEventListener('activate', (evt) => {
 
 // fetch event
 self.addEventListener('fetch', (evt) => {
-    console.log('fetch event', evt);
     evt.respondWith(
         caches
             .match(evt.request)
