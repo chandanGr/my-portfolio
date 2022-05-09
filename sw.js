@@ -1,6 +1,6 @@
 var self = this;
-const staticCacheName = 'site-static-v1.2';
-const dynamicCacheName = 'site-dynamic-v1.2';
+const staticCacheName = 'site-static-v1.3';
+const dynamicCacheName = 'site-dynamic-v1.3';
 const assets = [
     'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css',
     'https://fonts.googleapis.com/css?family=Concert%20One',
