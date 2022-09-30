@@ -4,6 +4,7 @@ import Button from '../Button';
 import { INavbar } from './Interface';
 
 import './index.scss';
+import { addNavLinksTag } from '../../tagging/tagEvents';
 interface INavbarProps {
     navBarItems: INavbar[];
     onButtonClick?: (name: string) => void;
@@ -22,7 +23,7 @@ function Navbar(props: INavbarProps) {
                         C
                     </a>
                     <ul className='navbarContainer__links'>
-                        {props.navBarItems.map((navBarItem) => {
+                        {props.navBarItems.map((navBarItem, index) => {
                             if (navBarItem.type === 'button') {
                                 return (
                                     <li className={`navbarContainer__links__button ${navBarItem.theme?.linkHoverAnimation ? 'link-hover-animation' : ''}`}>
@@ -39,7 +40,11 @@ function Navbar(props: INavbarProps) {
                             }
                             return (
                                 <li className={`${navBarItem.theme?.linkHoverAnimation ? 'link-hover-animation' : ''}`}>
-                                    <a className='navbarContainer__links__link' href={navBarItem.href} {...navBarItem.attributes}>
+                                    <a className='navbarContainer__links__link' href={navBarItem.href} {...navBarItem.attributes}
+                                        onClick={() => {
+                                            addNavLinksTag(navBarItem.name, navBarItem.href ?? '', index+1)
+                                        }
+                                        }>
                                         {navBarItem.name}
                                     </a>
                                 </li>

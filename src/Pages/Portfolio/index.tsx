@@ -20,6 +20,10 @@ import { companyDetails, imageInfos, infoCardData, navBarItems, sidebarItems, sk
 import resume from '../../resume.pdf';
 
 import './index.scss';
+import { initializeTagManager } from '../../tagging/config';
+import { addDownloadResumeTag, addSideBarLinkTag } from '../../tagging/tagEvents';
+
+initializeTagManager();
 
 function Portfolio() {
     const [initialLoad, setInitialLoad] = useState(true);
@@ -36,12 +40,15 @@ function Portfolio() {
 
     return (
         <div className='portfolio'>
-            <Navbar navBarItems={navBarItems} />
+            <Navbar navBarItems={navBarItems} onButtonClick={addDownloadResumeTag}/>
             <div className='portfolio__wrapper'>
                 <SideBar
                     sideBarItems={sidebarItems}
                     theme={{
                         nameAnimation: true
+                    }}
+                    onClickSideBarLink={(selectedSideBarItem, position) => {
+                        addSideBarLinkTag(selectedSideBarItem.name, selectedSideBarItem.link, position)
                     }}
                 />
                 <AsideBar />
@@ -56,7 +63,9 @@ function Portfolio() {
                         collaborate in a team setting.
                     </p>
                     <a className='resume-download' href={resume} target='_blank' download={true}>
-                        <Button theme={{ hoverButtonAnimation: true }}>Download Resume</Button>
+                        <Button theme={{ hoverButtonAnimation: true }} onClick={() => {
+                            addDownloadResumeTag()
+                        }}>Download Resume</Button>
                     </a>
                 </div>
                 <InfoSection headerName='About Me' id='ABOUT'>
